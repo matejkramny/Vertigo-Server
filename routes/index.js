@@ -59,7 +59,7 @@ exports.downloadWorld = function (req, res) {
 		
 		var filename = config.path.join(process.cwd(), "worlds", result.id+".vertigo.world.json");
 		
-		config.path.exists(filename, function(exists) {
+		fs.exists(filename, function(exists) {
 			if (!exists) {
 				res.set("Content-Type", "text/plain");
 				res.set("Connection","close");
